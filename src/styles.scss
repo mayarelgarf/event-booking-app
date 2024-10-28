@@ -2,3 +2,30 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+mat-card {
+  width: 30rem;
+  height: 30rem;
+ background-color: #ccdcf1;
+ text-align: center;
+}
+mat-card-content {
+  flex: 1;
+}
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  mat-card-title {
+    font-size: 32px!important;
+    font-weight: 400!important;
+    padding: 2rem !important;
+  }
+  mat-card-subtitle{
+    padding: 3rem !important;
+    font-size: 21px!important;
+    font-weight: 300!important;
+    width: 80%;
+
+  }
+}
