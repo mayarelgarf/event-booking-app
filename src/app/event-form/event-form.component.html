@@ -1,0 +1,8 @@
+<form [formGroup]="eventForm">
+  <input formControlName="name" placeholder="Name" />
+  <input formControlName="email" placeholder="Email" type="email" />
+  <input formControlName="acceptTerms" type="checkbox" /> Accept Terms
+
+  <button (click)="undo()" [disabled]="!canUndo">Undo</button>
+  <button (click)="redo()" [disabled]="!canRedo">Redo</button>
+</form>
