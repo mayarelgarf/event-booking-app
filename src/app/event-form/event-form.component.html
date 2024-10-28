@@ -1,8 +1,31 @@
-<form [formGroup]="eventForm">
-  <input formControlName="name" placeholder="Name" />
-  <input formControlName="email" placeholder="Email" type="email" />
-  <input formControlName="acceptTerms" type="checkbox" /> Accept Terms
 
-  <button (click)="undo()" [disabled]="!canUndo">Undo</button>
-  <button (click)="redo()" [disabled]="!canRedo">Redo</button>
-</form>
+<mat-card appearance="outlined" class="events-form-container">
+  <mat-card-header>
+    <mat-card-title>Fill in events form</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="eventForm" class="events-form-container__form">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput />
+      </mat-form-field>
+
+      <mat-checkbox formControlName="acceptTerms">
+        Send email about future offers
+      </mat-checkbox>
+      <div class="events-form-container__buttons-container">
+        <button mat-raised-button (click)="undo()" [disabled]="!canUndo">
+          Undo
+        </button>
+        <button mat-raised-button (click)="redo()" [disabled]="!canRedo">
+          Redo
+        </button>
+      </div>
+      <button mat-raised-button class="submit-btn">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>
