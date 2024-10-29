@@ -14,7 +14,7 @@
         <input formControlName="email" matInput />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Month of the event</mat-label>
+        <mat-label>Month of the event (optional)</mat-label>
         <mat-select formControlName="month">
           @for(month of months; track $index){
             <mat-option  [value]="month.id">

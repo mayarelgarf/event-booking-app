@@ -60,7 +60,7 @@ export class EventFormComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       acceptTerms: [false],
-      month: ['', Validators.required],
+      month: [''],
     });
   }
   ngOnInit() {
