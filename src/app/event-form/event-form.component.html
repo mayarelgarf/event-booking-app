@@ -17,6 +17,17 @@
       <mat-checkbox formControlName="acceptTerms">
         Send email about future offers
       </mat-checkbox>
+      @if(isSubmitted && eventForm.invalid){
+        <div class="error-summary">
+
+          <ul>
+            @for (error of errorMessages; track $index) {
+              <mat-error>{{ error }}</mat-error>
+            }
+
+          </ul>
+        </div>
+      }
       <div class="events-form-container__buttons-container">
         <button mat-raised-button (click)="undo()" [disabled]="!canUndo">
           Undo
@@ -25,7 +36,7 @@
           Redo
         </button>
       </div>
-      <button mat-raised-button class="submit-btn">Submit</button>
+      <button mat-raised-button class="submit-btn" (click)="onSubmit()">Submit</button>
     </form>
   </mat-card-content>
 </mat-card>

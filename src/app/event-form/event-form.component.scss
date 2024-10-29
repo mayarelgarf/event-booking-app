@@ -1,7 +1,4 @@
 .events-form-container {
-
-  display: flex;
-  gap: 1rem;
   &__form {
     display: flex;
     flex-direction: column;
@@ -13,16 +10,20 @@
     gap: 1rem;
   }
 
-  mat-form-field{
+  mat-form-field {
     width: 16rem;
-
   }
 
   .submit-btn {
     margin-top: 0.5rem;
   }
-
-
-
-
+  .error-summary {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    ul {
+      margin: 0;
+      display: contents;
+    }
+  }
 }
