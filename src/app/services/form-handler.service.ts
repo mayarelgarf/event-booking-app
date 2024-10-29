@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { eventsForm } from '../interfaces/events.interface';
+import { IEventsForm } from '../interfaces/events.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class FormHandlerService {
 
   constructor() { }
 
-  undo(undoStack:eventsForm[],redoStack:eventsForm[],form:FormGroup) {
+  undo(undoStack:IEventsForm[],redoStack:IEventsForm[],form:FormGroup) {
     if (undoStack.length > 1) { // Prevent undo beyond initial state
       const currentState = undoStack.pop()!;
       redoStack.push(currentState);
@@ -20,7 +20,7 @@ export class FormHandlerService {
     }
   }
 
-  redo(undoStack:eventsForm[],redoStack:eventsForm[],form:FormGroup) {
+  redo(undoStack:IEventsForm[],redoStack:IEventsForm[],form:FormGroup) {
     if (redoStack.length > 0) {
       const redoState = redoStack.pop()!;
       undoStack.push(redoState);

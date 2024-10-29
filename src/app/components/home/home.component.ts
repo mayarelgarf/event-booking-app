@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import { mainPath } from '../enums/main-path.enums';
+import { mainPath } from '../../enums/main-path.enums';
 import { RouterModule } from '@angular/router';
 
 @Component({

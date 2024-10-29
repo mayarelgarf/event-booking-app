@@ -13,7 +13,17 @@
         <mat-label>Email</mat-label>
         <input formControlName="email" matInput />
       </mat-form-field>
+      <mat-form-field>
+        <mat-label>Month</mat-label>
+        <mat-select formControlName="month">
+          @for(month of months; track $index){
+            <mat-option  [value]="month.id">
+              {{ month.name }}
+            </mat-option>
+          }
 
+        </mat-select>
+      </mat-form-field>
       <mat-checkbox formControlName="acceptTerms">
         Send email about future offers
       </mat-checkbox>
